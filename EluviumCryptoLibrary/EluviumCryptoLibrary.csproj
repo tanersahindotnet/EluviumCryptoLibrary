@@ -27,7 +27,9 @@
     <PackageProjectUrl>http://eluvium.info/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/tanersahincom/EluviumCryptoLibrary</RepositoryUrl>
     <RepositoryType>Library</RepositoryType>
-    <PackageTags />
+    <PackageTags>#security,#cryptography,,#encryption,#dataprotection,datasecurity</PackageTags>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -83,6 +85,11 @@
     <Compile Include="Services\PasswordGeneratorService\IPasswordGeneratorService.cs" />
     <Compile Include="Services\PasswordGeneratorService\PasswordGeneratorService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
