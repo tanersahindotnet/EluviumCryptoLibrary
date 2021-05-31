@@ -1,7 +1,7 @@
 # EluviumCryptoLibrary
 Eluvium Security &amp; Crypto Library for .Net
 
-Eluvium crypto library is an open source, portable, easy to use, readable and flexible security library for .Net
+Eluvium crypto library is an open source, portable, easy to use, readable and flexible security library for .Net.
 Use Eluvium's security infrastructure in your apps
 
 # Services
@@ -85,4 +85,10 @@ async Task<(bool passwordCompromised, int breachCount)> CheckPasswordAsync(strin
 
 PasswordScoreEnum CheckStrength(string password) // Checks your password's security level. 
 //Return tipe is Enum that calculates security score of password from 0 to 5
+```
+
+**PasswordGeneratorService:** Generate secure passwords using PasswordGeneratorService service.
+
+```
+ string GeneratePassword(int length, bool lowercase, bool uppercase, bool number, bool character, bool special)
 ```
