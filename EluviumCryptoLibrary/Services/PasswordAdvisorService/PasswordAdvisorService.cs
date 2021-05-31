@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace EluviumCryptoLibrary.Services.PasswordAdvisorService
@@ -13,6 +14,28 @@ namespace EluviumCryptoLibrary.Services.PasswordAdvisorService
         private static readonly IReadOnlyDictionary<string, int> EmptyDictionary = new Dictionary<string, int>();
         private static readonly char[] NewLines = { '\n', '\r' };
         private static readonly char[] Colon = { ':' };
+
+        public PasswordScoreEnum CheckStrength(string password)
+        {
+            var score = 1;
+            if (string.IsNullOrEmpty(password))
+                return PasswordScoreEnum.Blank;
+            if (password.Length < 4)
+                return PasswordScoreEnum.VeryWeak;
+
+            if (password.Length >= 8)
+                score++;
+            if (password.Length >= 12)
+                score++;
+            if (Regex.IsMatch(password, @"[0-9]+(\.[0-9][0-9]?)?", RegexOptions.ECMAScript))   //number only //"^\d+$" if you need to match more than one digit.
+                score++;
+            if (Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z]).+$", RegexOptions.ECMAScript)) //both, lower and upper case
+                score++;
+            if (Regex.IsMatch(password, @"[!,@,#,$,%,^,&,*,?,_,~,-,£,(,)]", RegexOptions.ECMAScript)) //^[A-Z]+$
+                score++;
+            return (PasswordScoreEnum)score;
+        }
+
         /// <summary>
         /// Check the Pwned Passwords API to see if the password has been seen in any data breaches.
         /// </summary>
