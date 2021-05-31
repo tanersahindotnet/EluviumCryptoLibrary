@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using EluviumCryptoLibrary.Models;
+using System.Threading.Tasks;
 
 namespace EluviumCryptoLibrary.Services.PasswordAdvisorService
 {

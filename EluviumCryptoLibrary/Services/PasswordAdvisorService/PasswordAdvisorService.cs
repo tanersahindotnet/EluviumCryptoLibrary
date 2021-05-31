@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EluviumCryptoLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Security.Cryptography;
