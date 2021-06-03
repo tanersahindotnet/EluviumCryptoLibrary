@@ -4,6 +4,8 @@ Eluvium Security &amp; Crypto Library for .Net
 Eluvium crypto library is an open source, portable, easy to use, readable and flexible security library for .Net.
 Use Eluvium's security infrastructure in your apps
 
+Nuget Package: https://www.nuget.org/packages/EluviumCryptoLibrary/
+
 # Services
 
 **AeAes256CbcHmacSha512:** File encryption service for your files. It uses 256 bit CBC encryption with Sha512 and password verification for your files.
