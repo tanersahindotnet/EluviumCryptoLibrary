@@ -92,3 +92,12 @@ PasswordScoreEnum CheckStrength(string password) // Checks your password's secur
 ```
  string GeneratePassword(int length, bool lowercase, bool uppercase, bool number, bool character, bool special)
 ```
+
+
+# Contribute
+
+Code contributions are welcome! Please commit any pull requests against the master branch.
+
+Security audits and feedback are welcome. Please open an issue or email us privately if the report is sensitive in nature.
+
+More Info: http://eluvium.info/
